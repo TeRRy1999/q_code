@@ -7,13 +7,4 @@
     tools:context="com.example.terry.q_code.MainActivity">
 
 
-    <Button
-        android:id="@+id/qrcode"
-        android:layout_width="wrap_content"
-        android:layout_height="44dp"
-        android:layout_marginBottom="108dp"
-        android:layout_marginStart="148dp"
-        android:text="scanner"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

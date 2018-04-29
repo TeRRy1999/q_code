@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
@@ -20,7 +21,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
 
-    private Button scan_btn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +30,8 @@ public class MainActivity extends AppCompatActivity {
 
         final Activity activity = this;
 
-        scan_btn = (Button) findViewById(R.id.qrcode);
-        scan_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                show_scanner(activity);
-            }
-        });
+
+        show_scanner(activity);
     }
 
     void show_scanner(Activity activity)
@@ -60,14 +56,18 @@ public class MainActivity extends AppCompatActivity {
             }
             else {
 
-                Toast.makeText(this, result.getContents().toString(),Toast.LENGTH_LONG).show();
-                /*
+                //Toast.makeText(this, result.getContents().toString(),Toast.LENGTH_LONG).show();
+
                 if(result.getContents().toString().equalsIgnoreCase("a")){
+                    Toast.makeText(this, "find A!!!",Toast.LENGTH_LONG).show();
+                    show_scanner(this);
+                }
+                else if(result.getContents().toString().equalsIgnoreCase("vedio")) {
+                    Toast.makeText(this, "find others!!!", Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(MainActivity.this,vedioActivity.class));
 
                 }
-                else
-                    Toast.makeText(this, result.getContents().toString(),Toast.LENGTH_LONG).show();
-                */
+
             }
         }
         else {
